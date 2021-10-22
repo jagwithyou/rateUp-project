@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>HomePage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+
+</style>
+<body class="w3-light-grey">
+
+  
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+  <center>TRENDING NOW</center>
+</header>
+
+
+<div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+  
+  <div class="w3-row w3-grayscale-min">
+    <div class="w3-quarter">
+      <img src="Images/JungleCruise.jpg" style="width:100%" onclick="onClick(this)" alt="Director: Jaume Collet-Serra">
+      <img src="Images/Shang-Chi.jpg" style="width:100%" onclick="onClick(this)" alt="Shang-Chi Director: Destin Daniel Cretton">
+      <img src="Images/Dune.jpg" style="width:99.8%" onclick="onClick(this)" alt="Dune Director: Denis Villeneuve">
+   </div>
+    
+   <div class="w3-quarter">
+      <img src="Images/SpaceJam.jpg" style="width:100%" onclick="onClick(this)" alt="Director: Joe Pytka">
+      <img src="Images/007.jpg" style="width:100%" onclick="onClick(this)" alt="Director: Cary Fukunaga">
+      <img src="Images/Nobody.png" style="width:100%" onclick="onClick(this)" alt="Director: Ilya Naishuller">
+    </div>
+    
+    <div class="w3-quarter">
+      <img src="Images/DontBreathe.jpg" style="width:100%" onclick="onClick(this)" alt="Director: Rodo Sayagues">
+      <img src="Images/WomanWindow.jpg" style="width:100%" onclick="onClick(this)" alt="Director: Rodo Sayagues">
+      <img src="Images/PaperLives.jpg" style="width:100%" onclick="onClick(this)" alt="Director: Can Ulkay">
+    </div>
+
+    <div class="w3-quarter">
+      <img src="Images/ThePhantom.jpg" style="width:101.5%" onclick="onClick(this)" alt="Director: Patrick Forbes">
+      <img src="Images/Remi.jpg" style="width:100%" onclick="onClick(this)" alt="Director: Lisa Joy">
+      <img src="Images/Redemption.jpg" style="width:105%" onclick="onClick(this)" alt="Director: Adam Salky">
+    </div>
+  </div>
+
+
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+  
+  <!-- Foto completa on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+<!-- About section -->
+<div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+  <h4><b>INFO</b></h4>
+  <div class="w3-content w3-justify" style="max-width:600px">
+    <h4>My Name</h4>
+    <p>sjkfh jkhfkjshfkjdfhbkljhf dkjfhd jkfhkdjh fjkdh fjkdhfjkdhfjoiwje lwkjewh ekjw ehjkwh ejkwhe kjwh ekjwh kjhe wkjhe kwjhe;wleh iowiuwhewjkhe wkjg ewhje kjwh ejkw egwkj ekwhegkwjg ek
+    </p>
+    <p>mail: Support@RateUp.com</p>
+    <p>tel: 12345678</p>
+    <hr class="w3-opacity">
+    <div class="w3-white">
+      <div class="w3-container w3-padding-small w3-center w3-grey" style="width:95%"></div>
+    </div>
+
+
+    
+
+
+
+  
+
+<!--end page-->
+</div>
+
+<script>
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
