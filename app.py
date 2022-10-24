@@ -3,10 +3,17 @@ from flask.wrappers import Request
 from jinja2 import Template, FileSystemLoader, Environment
 from typing import Dict, Text
 import psycopg2
+import config
 
 app = Flask(__name__)
-
-con = psycopg2.connect(database="rateup", user="postgres", password="", host="127.0.0.1", port="5432")
+print("================",config.host)
+con = psycopg2.connect(
+        database=config.database, 
+        user=config.user,
+        password=config.password,
+        host=config.host, 
+        port=config.port
+    )
 print("Database opened successfully")
 
 
@@ -15,7 +22,15 @@ environment = Environment(loader = templates)
 
 @app.route("/", methods = ["GET", "POST"])
 def home():
+    return render_template("HomePageNew.html")
+
+@app.route("/home", methods = ["GET"])
+def home_new():
     return render_template("HomePage.html")
+
+@app.route("/rate", methods = ["GET"])
+def rate_movie():
+    return render_template("RateTheMovie.html")
 
 @app.route("/signUp", methods = ["GET", "POST"])
 def signUp():
@@ -52,4 +67,4 @@ def page_not_found(error):
     return render_template('error_found.html'), 404
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",debug=True)
+    app.run(host="0.0.0.0", port=5005,debug=True)
